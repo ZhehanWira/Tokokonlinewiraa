@@ -29,7 +29,7 @@ const LoginPage = () => {
         if (data.status == true) {
             toast(data.message, { containerId: `toastLogin`, type: "success", hideProgressBar: true, autoClose: 1000 })
             if (data.user.role == "admin") {
-                setTimeout(() => router.replace("/dashboard"), 2000)
+                setTimeout(() => router.replace("/admin/dashboard"), 2000)
             } else if (data.user.role == "user") {
                 setTimeout(() => router.replace("/dashboard"), 2000)
             }

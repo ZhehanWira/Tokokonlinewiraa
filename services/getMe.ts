@@ -1,6 +1,6 @@
 
 import { BASE_API_URL } from "@/global";
-import { getServerCookie } from "@/lib/server-cookies";
+import { getServerCookie } from "@/lib/server-cookie";
 import { Data } from "@/types/getMe";
 import axios from "axios"
 type ResponseData = {
@@ -15,6 +15,7 @@ const GetMeApi = async (): Promise<ResponseData> => {
         const response = await axios.get(`${BASE_API_URL}/admins/me`, {
             headers: {
                 "Content-Type": "application/json",
+             
                 'authorization': `Bearer ${token}`
             },
         });
